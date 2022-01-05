@@ -17,13 +17,13 @@ Makes Markdown interactive
 
 * `ESC` reset prompt
 * `ctrl/cmd+ENTER` transmit selection
-* `ctrl/cmd+I` prompt focus and copy selection
-* `ctrl/cmd+S` save buffer
-* `ctrl/cmd+P` polish output
-* `ctrl/cmd+L` switch layout
-* `ctrl/cmd+B` print bookmarks
-* `ctrl/cmd+U` print units
-* `ctrl/cmd+T` print threads
+* `ctrl/cmd+i` prompt focus and copy selection
+* `ctrl/cmd+s` save buffer
+* `ctrl/cmd+p` polish output
+* `ctrl/cmd+l` switch layout
+* `ctrl/cmd+b` print bookmarks
+* `ctrl/cmd+u` print units
+* `ctrl/cmd+t` print threads
 
 ## CLI options
 
