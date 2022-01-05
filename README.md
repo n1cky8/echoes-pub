@@ -1,6 +1,6 @@
 # Echoes
 
-Makes Markdown interactice
+Makes Markdown interactive
 
 ## Declarative system language
 
