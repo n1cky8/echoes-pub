@@ -15,15 +15,18 @@ Makes Markdown interactive
 
 ## KEY BiNDiNG
 
-* `ESC` reset prompt
-* `ctrl/cmd+ENTER` transmit selection
-* `ctrl/cmd+i` prompt focus and copy selection
-* `ctrl/cmd+s` save buffer
-* `ctrl/cmd+p` polish output
-* `ctrl/cmd+l` switch layout
-* `ctrl/cmd+b` print bookmarks
-* `ctrl/cmd+u` print units
-* `ctrl/cmd+t` print threads
+* `ESC` switch prompt
+* `ctrl/cmd+ENTER`   transmit selection
+* `ctrl/cmd+n`       new buffer
+* `ctrl/cmd+shift+n` new window
+* `ctrl/cmd+i`       transfer focus to the prompt
+* `ctrl/cmd+shift+i` transfer focus to the prompt and copy selection
+* `ctrl/cmd+s`       save buffer
+* `ctrl/cmd+p`       polish output
+* `ctrl/cmd+l`       switch layout
+* `ctrl/cmd+b`       print bookmarks
+* `ctrl/cmd+u`       print units
+* `ctrl/cmd+t`       print threads
 
 ## CLI options
 
@@ -66,6 +69,16 @@ Makes Markdown interactive
   <replace with os-command>
 }
 ```
+
+**perform a cached unit**
+@use $<verb>.<alias>
+
+**placeholder**
+$<verb>.<alias> or ${<verb>.<alias>}
+
+**special placeholders**
+$path.user replace with user's home (like ~)
+$path.wdir replace with current working directory
 
 > * select and press ctrl/cmd+ENTER to transmite
 > * use alias to cache units
