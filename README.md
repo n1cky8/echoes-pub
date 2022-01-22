@@ -13,6 +13,8 @@
 
 Makes Markdown interactive
 
+> **Echoes files are textfiles with the extension .echo**
+
 ## KEY BiNDiNG
 
 * `ESC` switch prompt
