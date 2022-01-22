@@ -1,0 +1,185 @@
+# git cheat sheet
+-----------------
+
+// verify that git has been installed
+@cmd git --help
+
+* set working directory *
+@var git-wdir {
+	${path.wdir}
+}
+
+@arg git-url {
+	url:
+}
+@arg git-new-branch {
+	new branch:
+}
+@arg git-remote-branch {
+	remote branch:
+}
+@arg git-branch {
+	branch:
+}
+@arg git-tag-name {
+	tag name:
+}
+@arg git-comment {
+	comment:
+}
+
+
+# Creating Repositories
+
+// create new repository in current directory
+@cmd ($var.git-wdir) git init
+
+//clone a remote repository
+@cmd ($var.git-wdir) git clone ${arg.git-url}
+** for example cloning the entire jquery repo locally **
+`@cmd ($var.git-wdir) git clone https://github.com/jquery/jquery`
+
+
+# Branches and Tags
+
+// List all existing branches with the latest commit comment
+@cmd ($var.git-wdir) git branch –av
+
+// Switch your HEAD to branch
+@cmd ($var.git-wdir) git checkout ${arg.git-branch}
+`@cmd ($var.git-wdir) git checkout $[Branch:]{var.git-branch}`
+
+// Create a new branch based on your current HEAD
+@cmd ($var.git-wdir) git branch ${arg.git-new-branch}
+
+// Create a new tracking branch based on a remote branch
+@cmd ($var.git-wdir) git checkout --track ${arg.git-remote-branch}
+// for example track the remote branch named feature-branch-foo
+`git checkout --track origin/feature-branch-foo`
+
+// Delete a local branch
+@cmd ($var.git-wdir) git branch -d ${arg.git-branch}
+
+// Rename a local branch
+@cmd ($var.git-wdir) git branch -m ${arg.git-new-branch}
+
+// Tag the current commit
+@cmd ($var.git-wdir) git tag ${arg.git-tag-name}
+
+
+# Local Changes
+
+//List all new or modified files - showing which are to staged to be commited and which are not
+@cmd ($var.git-wdir) git status
+
+@cmd git-status ($var.git-wdir) {
+	git status
+}
+
+//View changes between staged files and unstaged changes in files
+@cmd ($var.git-wdir) git diff
+
+// View changes between staged files and the latest committed version
+@cmd ($var.git-wdir) git diff --cached
+// only one file add the file name
+@cmd ($var.git-wdir) git diff --cached [file]
+
+// Add all current changes to the next commit
+@cmd ($var.git-wdir) git add .
+@cmd ($var.git-wdir) git add [file]
+
+// Remove a file from the next commit
+@cmd ($var.git-wdir) git rm [file]
+
+// Add some changes in < file> to the next commit
+@cmd ($var.git-wdir) git add -p [file]
+
+// Commit all local changes in tracked  files
+@cmd ($var.git-wdir) git commit –a
+@cmd ($var.git-wdir) git commit -am "An inline commit message"
+
+// Commit previously staged changes
+@cmd ($var.git-wdir) git commit
+@cmd ($var.git-wdir) git commit -m ${arg.git-comment}
+
+// Unstages the file, but preserve its contents
+@cmd ($var.git-wdir) git reset [file]
+
+
+# Commit History
+
+// Show all commits, starting from the latest 
+@cmd ($var.git-wdir) git log
+
+// Show changes over time for a specific file 
+@cmd ($var.git-wdir) git log -p [file]
+
+// Show who changed each line in a file, when it was changed and the commit id
+@cmd ($var.git-wdir) git blame -c [file]
+
+
+# Update and Publish
+
+// List all remotes 
+@cmd ($var.git-wdir) git remote -v
+
+// Add a new remote at [url] with the given local name
+@cmd ($var.git-wdir) git remote add [localname] [url]
+
+// Download all changes from a remote, but don‘t integrate into them locally
+@cmd ($var.git-wdir) git fetch [remote]
+
+// Download all remote changes and merge them locally
+@cmd ($var.git-wdir) git pull [remote] ${arg.git-branch}
+
+// Publish local changes to a remote 
+@cmd ($var.git-wdir) git push [remote] ${arg.git-branch}
+
+// Delete a branch on the remote 
+@cmd ($var.git-wdir) git branch -dr ${arg.git-remote-branch}
+
+// Publish your tags to a remote
+@cmd ($var.git-wdir) git push --tags
+
+
+# Merge & Rebase
+
+// Merge ${arg.git-branch} into your current HEAD 
+@cmd ($var.git-wdir) git merge ${arg.git-branch}
+
+// Rebase your current HEAD onto ${arg.git-branch}
+@cmd ($var.git-wdir) git rebase ${arg.git-branch}
+
+// Abort a rebase 
+@cmd ($var.git-wdir) git rebase –abort
+
+// Continue a rebase after resolving conflicts 
+@cmd ($var.git-wdir) git rebase –continue
+
+// Use your configured merge tool to solve conflicts 
+@cmd ($var.git-wdir) git mergetool
+
+// Use your editor to manually solve conflicts and (after resolving) mark as resolved 
+@cmd ($var.git-wdir) git add <resolved- file>
+@cmd ($var.git-wdir) git rm <resolved- file>
+
+
+# Undo
+
+// Discard all local changes and start working on the current branch from the last commit
+@cmd ($var.git-wdir) git reset --hard HEAD
+
+// Discard local changes to a specific file 
+@cmd ($var.git-wdir) git checkout HEAD [file]
+
+// Revert a commit by making a new commit which reverses the given [commit]
+@cmd ($var.git-wdir) git revert [commit]
+
+// Reset your current branch to a previous commit and discard all changes since then 
+@cmd ($var.git-wdir) git reset --hard [commit]
+
+// Reset your current branch to a previous commit and preserve all changes as unstaged changes 
+@cmd ($var.git-wdir) git reset [commit]
+
+// Reset your current branch to a previous commit and preserve staged local changes 
+@cmd ($var.git-wdir) git reset --keep [commit]
