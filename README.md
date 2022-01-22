@@ -71,14 +71,20 @@ Makes Markdown interactive
 ```
 
 **perform a cached unit**
+```
 @use $<verb>.<alias>
+```
 
 **placeholder**
+```
 $<verb>.<alias> or ${<verb>.<alias>}
+```
 
 **special placeholders**
+```
 $path.user replace with user's home (like ~)
 $path.wdir replace with current working directory
+```
 
 > * select and press ctrl/cmd+ENTER to transmite
 > * use alias to cache units
