@@ -151,5 +151,5 @@ or
 :f|hello echoes|:r|hello nickyb|:l|..15
 ```
 
-### Examples
+## Examples
 [Git Cheat Sheet](./cheat-sheets/git.echo?ts=2)
