@@ -98,4 +98,4 @@ $path.wdir replace with current working directory
 > * use upper case Alias to store permanently
 
 ### Examples
-[Git Cheat Sheet](./cheat-sheets/git.echo)
+[Git Cheat Sheet](./cheat-sheets/git.echo?ts=2)
