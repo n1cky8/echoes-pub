@@ -25,7 +25,7 @@
 <li>Reproduce, copy, distribute, resell or otherwise use the Software for any commercial purpose</li>
 <li>Allow any third party to use the Software on behalf of or for the benefit of any third party</li>
 <li>Use the Software in any way which breaches any applicable local, national or international law</li>
-<li>use the Software for any purpose that <span class="company_name"><b>nickyb</b></span> considers is a breach of this EULA agreement</li>
+<li>Use the Software for any purpose that <span class="company_name"><b>nickyb</b></span> considers is a breach of this EULA agreement</li>
 </ul>
 
 <h3>Intellectual Property and Ownership</h3>
