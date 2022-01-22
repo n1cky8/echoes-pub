@@ -31,6 +31,9 @@
 @arg git-comment {
 	comment:
 }
+@arg git-commit {
+	commit:
+}
 
 
 # Creating Repositories
@@ -51,7 +54,6 @@
 
 // Switch your HEAD to branch
 @cmd ($var.git-wdir) git checkout ${arg.git-branch}
-`@cmd ($var.git-wdir) git checkout $[Branch:]{var.git-branch}`
 
 // Create a new branch based on your current HEAD
 @cmd ($var.git-wdir) git branch ${arg.git-new-branch}
@@ -131,13 +133,13 @@
 @cmd ($var.git-wdir) git remote add [localname] [url]
 
 // Download all changes from a remote, but don‘t integrate into them locally
-@cmd ($var.git-wdir) git fetch [remote]
+@cmd ($var.git-wdir) git fetch ${arg.git-remote-branch}
 
 // Download all remote changes and merge them locally
-@cmd ($var.git-wdir) git pull [remote] ${arg.git-branch}
+@cmd ($var.git-wdir) git pull ${arg.git-remote-branch} ${arg.git-branch}
 
 // Publish local changes to a remote 
-@cmd ($var.git-wdir) git push [remote] ${arg.git-branch}
+@cmd ($var.git-wdir) git push ${arg.git-remote-branch} ${arg.git-branch}
 
 // Delete a branch on the remote 
 @cmd ($var.git-wdir) git branch -dr ${arg.git-remote-branch}
@@ -176,14 +178,14 @@
 // Discard local changes to a specific file 
 @cmd ($var.git-wdir) git checkout HEAD [file]
 
-// Revert a commit by making a new commit which reverses the given [commit]
-@cmd ($var.git-wdir) git revert [commit]
+// Revert a commit by making a new commit which reverses the given ${arg.git-commit}
+@cmd ($var.git-wdir) git revert ${arg.git-commit}
 
 // Reset your current branch to a previous commit and discard all changes since then 
-@cmd ($var.git-wdir) git reset --hard [commit]
+@cmd ($var.git-wdir) git reset --hard ${arg.git-commit}
 
 // Reset your current branch to a previous commit and preserve all changes as unstaged changes 
-@cmd ($var.git-wdir) git reset [commit]
+@cmd ($var.git-wdir) git reset ${arg.git-commit}
 
 // Reset your current branch to a previous commit and preserve staged local changes 
-@cmd ($var.git-wdir) git reset --keep [commit]
+@cmd ($var.git-wdir) git reset --keep ${arg.git-commit}
