@@ -41,45 +41,67 @@ Makes Markdown interactive
 
 **put in cache**
 ```
-@var <replace with an alias> {
-  <replace with path>
+@var <alias> {
+  <value>
 }
 ```
 
 **ask for input**
 ```
-@arg <replace with an alias> {
-	<replace with label to display>
+@arg <alias> {
+	<label>
 }
 ```
 
-**execute command**
+**execute command (single line format)**
 ```
-@cmd <replace with os-command>
+@cmd <os-command>
+or
+@cmd (<path>) <os-command>
 ```
 
-**cache a command**
+**cache a command (multi line format)**
 ```
-@cmd <replace with an alias> {
+@cmd <alias> {
+  <os-command>
+}
+or
+@cmd <alias> (<path>) {
+  <os-command>
+}
+```
+
+**execute command without terminal (multi line format)**
+```
+@run <os-command>
+or
+@run (<path>) <os-command>
+```
+
+**execute command without terminal (multi line format)**
+```
+@run <alias> {
+  <replace with os-command>
+}
+or
+@run <alias> (<path>) {
   <replace with os-command>
 }
 ```
 
-**execute command without terminal**
-```
-@run <replace with os-command>
-```
-
-**cache a command without terminal**
-```
-@run  <replace with an alias> {
-  <replace with os-command>
-}
-```
-
-**perform a cached unit**
+**perform a cached unit (@cmd or @run)**
 ```
 @use $<verb>.<alias>
+```
+
+**print cached unit (@arg or @var)**
+```
+@ink (<#color>) ${path.wdir}
+```
+
+**print text or cached unit (@arg or @var) using default color**
+```
+@ink <value>
 ```
 
 **placeholder**
