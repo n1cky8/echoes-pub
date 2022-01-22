@@ -4,10 +4,14 @@
 // verify that git has been installed
 @cmd git --help
 
+@ink (#74b9ff) ${path.wdir}
+
 * set working directory *
 @var git-wdir {
 	${path.wdir}
 }
+
+@ink (#55efc4) ${var.git-wdir}
 
 @arg git-url {
 	url:

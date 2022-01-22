@@ -96,7 +96,7 @@ or
 
 **print cached unit (@arg or @var)**
 ```
-@ink (<#color>) ${path.wdir}
+@ink (<#color>) <value>
 ```
 
 **print text or cached unit (@arg or @var) using default color**
