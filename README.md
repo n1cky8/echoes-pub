@@ -46,6 +46,13 @@ Makes Markdown interactive
 }
 ```
 
+**ask for input**
+```
+@arg <replace with an alias> {
+	<replace with label to display>
+}
+```
+
 **execute command**
 ```
 @cmd <replace with os-command>
@@ -89,3 +96,6 @@ $path.wdir replace with current working directory
 > * select and press ctrl/cmd+ENTER to transmite
 > * use alias to cache units
 > * use upper case Alias to store permanently
+
+### Examples
+[Git Cheat Sheet](./cheat-sheets/git.echo)
