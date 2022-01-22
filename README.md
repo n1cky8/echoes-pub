@@ -39,7 +39,7 @@ Makes Markdown interactive
 * `<path> :w` write buffer to file
 * `<echo file> :up` scan and cache units
 
-## Declarative system language
+## Declarative language
 
 **put in cache**
 ```
