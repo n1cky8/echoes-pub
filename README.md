@@ -27,6 +27,8 @@ Makes Markdown interactive
 * `ctrl/cmd+b`       print bookmarks
 * `ctrl/cmd+u`       print units
 * `ctrl/cmd+t`       print threads
+* `ctrl/cmd+f`       find text
+* `ctrl/cmd+r`       replace text
 
 ## CLI options
 
@@ -118,6 +120,36 @@ $path.wdir replace with current working directory
 > * select and press ctrl/cmd+ENTER to transmite
 > * use alias to cache units
 > * use upper case Alias to store permanently
+
+## CLI
+
+**search text**
+```
+:f<delimiter><search>
+
+*example*
+:f|hello echoes
+```
+
+**search text and replace**
+```
+:f<delimiter><search><delimiter>:r<delimiter><new><delimiter>
+
+*example*
+:f|hello echoes|:r|hello nickyb
+```
+
+**search text and replace in a range**
+```
+:f<delimiter><search><delimiter>:r<delimiter><new><delimiter>:l<delimiter><start-line>..<end-line>
+
+*example*
+:f|hello echoes|:r|hello nickyb|:l|10..15
+or
+:f|hello echoes|:r|hello nickyb|:l|10..
+or
+:f|hello echoes|:r|hello nickyb|:l|..15
+```
 
 ### Examples
 [Git Cheat Sheet](./cheat-sheets/git.echo?ts=2)
