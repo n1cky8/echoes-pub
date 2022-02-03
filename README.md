@@ -1,4 +1,6 @@
 # Echoes
+> Sometimes I am really bored of typing the same commands all over again
+
 ```
 +---------+
 |  e   c  |
@@ -12,8 +14,7 @@
 ```
 
 Makes Markdown interactive
-
-> **Echoes files are textfiles with the extension .echo**
+*Echoes files are textfiles with the extension .echo*
 
 ## KEY BiNDiNG
 
@@ -25,12 +26,15 @@ Makes Markdown interactive
 * `ctrl/cmd+shift+i` transfer focus to the prompt and copy selection
 * `ctrl/cmd+s`       save buffer
 * `ctrl/cmd+p`       polish output
-* `ctrl/cmd+l`       switch layout
 * `ctrl/cmd+b`       print bookmarks
 * `ctrl/cmd+u`       print units
 * `ctrl/cmd+t`       print threads
 * `ctrl/cmd+f`       find text
 * `ctrl/cmd+r`       replace text
+
+* `ctrl/cmd+1`       show/hide cache view (left)
+* `ctrl/cmd+2`       show/hide buffer view (center)
+* `ctrl/cmd+3`       show/hide terminal view (right)
 
 ## CLI options
 
@@ -53,7 +57,7 @@ Makes Markdown interactive
 **ask for input**
 ```
 @arg <alias> {
-	<label>
+  <label>
 }
 ```
 
@@ -152,6 +156,13 @@ or
 or
 :f|hello echoes|:r|hello nickyb|:l|..15
 ```
+
+* `://bookmarks` list bookmarks
+* `://tasks`     list running tasks
+* `://units`     list cached units
+
+**delete**
+`://<resource>/<id> :d`
 
 ## Examples
 [Git Cheat Sheet](./cheat-sheets/git.echo?ts=2)

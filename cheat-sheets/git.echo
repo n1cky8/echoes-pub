@@ -4,6 +4,7 @@
 // verify that git has been installed
 @cmd git --help
 
+---------------------------------------
 @ink (#74b9ff) ${path.wdir}
 
 * set working directory *
@@ -12,6 +13,11 @@
 }
 
 @ink (#55efc4) ${var.git-wdir}
+
+@cmd git-status ($var.git-wdir) {
+	git status
+}
+---------------------------------------
 
 @arg git-url {
 	url:
@@ -77,10 +83,6 @@
 
 //List all new or modified files - showing which are to staged to be commited and which are not
 @cmd ($var.git-wdir) git status
-
-@cmd git-status ($var.git-wdir) {
-	git status
-}
 
 //View changes between staged files and unstaged changes in files
 @cmd ($var.git-wdir) git diff
